@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/scene.gltf</file>
+    </qresource>
+</RCC>
+

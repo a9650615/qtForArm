@@ -16,10 +16,12 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     // load custom c++ module
-    qmlRegisterType<ColorMarker>("io.qt.colormarker", 1, 0, "ColorMarker");
 
+    qmlRegisterType<ColorMarker>("io.qt.colormarker", 1, 0, "ColorMarker");
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("main.qml")));
+//    ColorMarker colorMaker;
+//    colorMaker.initProcess();
 
 
     return app.exec();

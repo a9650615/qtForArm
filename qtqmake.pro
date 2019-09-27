@@ -27,10 +27,27 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
+#TEMPLATE = SUBDIRS
+
+#SUBDIRS += assets
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    Model.qml \
     main.qml
+
+#`INCLUDEPATH += pkg-config --cflags opencv`
+
+#LIBS += /usr/local
+
+CONFIG += link_pkgconfig
+PKGCONFIG += opencv
+
+#INCLUDEPATH += /usr/local/include
+
+RESOURCES += \
+    gltf.qrc

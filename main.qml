@@ -57,27 +57,12 @@ ApplicationWindow
                 anchors.bottomMargin: 0
                 anchors.top: parent.top
                 anchors.topMargin: 0
-                Camera {
-                    id: camera
-//                    captureMode: Camera.
-//                    imageProcessing.whiteBalanceMode: CameraImageProcessing.WhiteBalanceFlash
-
-//                    exposure {
-//                        exposureCompensation: -1.0
-//                        exposureMode: Camera.ExposurePortrait
-//                    }
-
-//                    flash.mode: Camera.FlashRedEyeReduction
-
-//                    imageCapture {
-//                        onImageCaptured: {
-//                            photoPreview.source = preview  // Show the preview in an Image
-//                        }
-//                    }
-                }
+//                Camera {
+//                    id: camera
+//                }
 
                 VideoOutput {
-                    source: camera
+                    source: colorMarker
                     anchors.fill: parent
                     focus : visible // to receive focus and capture key events when visible
 //                    autoOrientation : false
@@ -89,22 +74,28 @@ ApplicationWindow
 //                }
             }
 
-            Canvas {
-                id: cameraView2
-                anchors.right: parent.right
-                anchors.rightMargin: 0
-                anchors.left: parent.left
-                anchors.leftMargin: parent.width / 2
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 0
-                anchors.top: parent.top
-                anchors.topMargin: 0
-                onPaint: {
-                    var ctx = getContext('2d');
-                    ctx.fillStyle = Qt.rgba(0, 1, 0, 1);
-                    ctx.fillRect(0, 0, width, height);
-                }
-            }
+//            Canvas {
+//                id: cameraView2
+//                anchors.right: parent.right
+//                anchors.rightMargin: 0
+//                anchors.left: parent.left
+//                anchors.leftMargin: parent.width / 2
+//                anchors.bottom: parent.bottom
+//                anchors.bottomMargin: 0
+//                anchors.top: parent.top
+//                anchors.topMargin: 0
+//                onPaint: {
+//                    var ctx = getContext('2d');
+//                    ctx.fillStyle = Qt.rgba(0, 1, 0, 1);
+//                    ctx.fillRect(0, 0, width, height);
+//                }
+//            }
+
+//            Model {
+//                id: wineRack
+//                position: Qt.vector3d(-60.0, 0.0, 50.0)
+//                angleX: 180
+//            }
 
 //            Scene3D {
 //                anchors.fill: parent
