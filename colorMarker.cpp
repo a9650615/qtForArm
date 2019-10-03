@@ -23,13 +23,14 @@ ColorMarker::ColorMarker(QObject *parent)
 //    height = engine.rootObjects()[0]->property("height").toInt();
 //    cv::VideoCapture camera;
 
+    startTimer(1000/30);
     startCamera();
-    startTimer(1000/15);
+    initProcess();
 }
 
 void ColorMarker::initProcess() {
-//    QtConcurrent::run(this,ColorMarker::process);
-    process();
+    QtConcurrent::run(this, &ColorMarker::process);
+//    process();
 }
 
 void ColorMarker::startCamera() {
@@ -45,7 +46,7 @@ void ColorMarker::startCamera() {
         _camera.open(0);
     }
 
-    process();
+//    process();
 //    _camera >> _mat;
 }
 
@@ -65,8 +66,11 @@ QString ColorMarker::getAppName() {
 }
 
 void ColorMarker::process() {
-    frameReady = true;
-    _camera >> _mat;
+    while(_camera.isOpened()) {
+        frameReady = true;
+        _camera >> _mat;
+//        qDebug() << "process";
+    }
 //    while (_camera.isOpened()) {
 //        _camera >> _mat;
 //    }
