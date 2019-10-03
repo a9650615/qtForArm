@@ -50,14 +50,17 @@ OBJECTS_DIR   = ./
 
 SOURCES       = colorMarker.cpp \
 		main.cpp \
-		mainwindow.cpp moc_colorMarker.cpp \
+		mainwindow.cpp qrc_gltf.cpp \
+		moc_colorMarker.cpp \
 		moc_mainwindow.cpp
 OBJECTS       = colorMarker.o \
 		main.o \
 		mainwindow.o \
+		qrc_gltf.o \
 		moc_colorMarker.o \
 		moc_mainwindow.o
-DIST          = main.qml \
+DIST          = Model.qml \
+		main.qml \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/spec_pre.prf \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/common/unix.conf \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/common/linux.conf \
@@ -174,6 +177,7 @@ DIST          = main.qml \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/default_pre.prf \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/resolve_config.prf \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/default_post.prf \
+		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/link_pkgconfig.prf \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/c++11.prf \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/warn_on.prf \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/qt.prf \
@@ -336,6 +340,7 @@ Makefile: qtqmake.pro /opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/default_pre.prf \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/resolve_config.prf \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/default_post.prf \
+		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/link_pkgconfig.prf \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/c++11.prf \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/warn_on.prf \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/qt.prf \
@@ -349,6 +354,7 @@ Makefile: qtqmake.pro /opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/yacc.prf \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/lex.prf \
 		qtqmake.pro \
+		gltf.qrc \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/libQt5QuickWidgets.prl \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/libQt5Quick.prl \
 		/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/libQt5Widgets.prl \
@@ -474,6 +480,7 @@ Makefile: qtqmake.pro /opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon
 /opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/default_pre.prf:
 /opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/resolve_config.prf:
 /opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/default_post.prf:
+/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/link_pkgconfig.prf:
 /opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/c++11.prf:
 /opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/warn_on.prf:
 /opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/qt.prf:
@@ -487,6 +494,7 @@ Makefile: qtqmake.pro /opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon
 /opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/yacc.prf:
 /opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/qt5/mkspecs/features/lex.prf:
 qtqmake.pro:
+gltf.qrc:
 /opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/libQt5QuickWidgets.prl:
 /opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/libQt5Quick.prl:
 /opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib/libQt5Widgets.prl:
@@ -509,6 +517,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
+	$(COPY_FILE) --parents gltf.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents colorMarker.h mainwindow.h $(DISTDIR)/
 	$(COPY_FILE) --parents colorMarker.cpp main.cpp mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
@@ -532,8 +541,13 @@ mocables: compiler_moc_header_make_all compiler_moc_source_make_all
 
 check: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_gltf.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_gltf.cpp
+qrc_gltf.cpp: gltf.qrc \
+		assets/scene.gltf
+	/opt/fsl-imx-x11/4.1.15-1.2.0/sysroots/x86_64-pokysdk-linux/usr/bin/qt5/rcc -name gltf gltf.qrc -o qrc_gltf.cpp
+
 compiler_moc_header_make_all: moc_colorMarker.cpp moc_mainwindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_colorMarker.cpp moc_mainwindow.cpp
@@ -557,7 +571,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -571,6 +585,9 @@ main.o: main.cpp mainwindow.h \
 mainwindow.o: mainwindow.cpp mainwindow.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
+
+qrc_gltf.o: qrc_gltf.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_gltf.o qrc_gltf.cpp
 
 moc_colorMarker.o: moc_colorMarker.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_colorMarker.o moc_colorMarker.cpp

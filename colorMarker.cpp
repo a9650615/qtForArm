@@ -86,8 +86,8 @@ void ColorMarker::timerEvent(QTimerEvent*)
 {
     if (!_surface) return;
 
-        if(frameReady)
-        qDebug() << "ddd = " << _mat.data;
+//        if(frameReady)
+//        qDebug() << "ddd = " << _mat.data;
 
         if(frameReady && !_mat.empty())
         {
