@@ -22,8 +22,6 @@ ColorMarker::ColorMarker(QObject *parent)
 //    width = engine.rootObjects()[0]->property("width").toInt();
 //    height = engine.rootObjects()[0]->property("height").toInt();
 //    cv::VideoCapture camera;
-
-    startTimer(1000/30);
     startCamera();
     initProcess();
 }
@@ -46,6 +44,7 @@ void ColorMarker::startCamera() {
         _camera.open(0);
     }
 
+    startTimer(1000/30);
 //    process();
 //    _camera >> _mat;
 }
