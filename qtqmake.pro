@@ -1,4 +1,6 @@
-QT       += core gui quickwidgets multimedia 3dcore 3dinput 3dquick
+QT       += core gui multimedia qml 3dcore 3dinput 3dquick
+
+#quickwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

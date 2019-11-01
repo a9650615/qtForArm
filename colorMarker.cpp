@@ -33,7 +33,7 @@ void ColorMarker::initProcess() {
 
 void ColorMarker::startCamera() {
     printf("this is console");
-    if(_camera.open(0)) {
+    if(_camera.open(1)) {
         qDebug() << "yes";
     } else {
         qDebug() << "no";
@@ -41,8 +41,11 @@ void ColorMarker::startCamera() {
 
     while (!_camera.isOpened()) {
         std::cout << "Failed to make connection to cam" << std::endl;
-        _camera.open(0);
+        _camera.open(1);
     }
+
+    _camera.set(CV_CAP_PROP_FRAME_WIDTH, 1280);
+    _camera.set(CV_CAP_PROP_FRAME_WIDTH, 720);
 
     startTimer(1000/30);
 //    process();
